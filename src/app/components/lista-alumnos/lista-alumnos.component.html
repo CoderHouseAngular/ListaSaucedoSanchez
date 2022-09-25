@@ -2,12 +2,12 @@
 <h2>Promedio de Alumnos</h2>
 
 <ul class="list-group">
-    <li *ngFor="let alumno of listaAlumnos;">
+    <li class="list-group-item" *ngFor="let alumno of listaAlumnos;">
         <div  appCustomDirective  >
             <div *ngIf="alumno.Genero=='Masculino'; then thenBlock else elseBlock"></div>
                 <ng-template #thenBlock><img src="https://cdn2.iconfinder.com/data/icons/avatars-2-7/128/20-512.png"/></ng-template>
                 <ng-template #elseBlock><img src="https://cdn2.iconfinder.com/data/icons/avatars-2-7/128/27-512.png"/> </ng-template>
-                {{alumno.Nombre | uppercase}} <span   [ngClass]="calcularPromedio(alumno.Resultados)>=70 ? 'aprovado':'no-aprovado'" >{{calcularPromedio(alumno.Resultados)}}</span>
+                {{alumno.Nombre | uppercase}} <span class="badge"  [ngClass]="calcularPromedio(alumno.Resultados)>=70 ? 'aprovado':'no-aprovado'" >{{calcularPromedio(alumno.Resultados)}}</span>
         </div>
     </li>
 </ul>
